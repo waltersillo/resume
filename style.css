@@ -1,0 +1,201 @@
+.cabecera-principal {
+    margin-bottom: 10px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100vh;
+}
+
+h1 {
+    font-size: 130px;
+    text-align: center;
+    justify-content: center;
+    grid-row: 1;
+}
+
+.title-header {
+ color:black;
+  font-family:'Times New Roman', Times, serif;
+  font-weight: normal;
+  text-align: center;
+  font-size: 4em;
+}
+
+.img-logo {
+	width: 120px;
+	margin: 0 auto;
+	display: block;
+}
+
+.container-life {
+   display: inline-block;
+    margin-top: 25px;
+    width: 50%;
+  margin-left: 32%; 
+  justify-content: center;
+    
+}
+
+
+.game-information-container {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: space-between;
+}
+
+.game-information {
+  color: #FFBB89;
+   font-size: 2em;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(red, orange);
+}
+
+.game-container {
+  margin: 40px auto;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  grid-gap: 15px;
+  justify-content: center;
+   perspective: 1000px;
+}
+
+.card {
+    background-color: beige;
+    height: 170px;
+    width: 120px;
+    position: relative;
+    margin: 5px;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .5s;
+}
+
+.card:active{
+    transform: scale(0.97);
+    transition: transform .2s;
+}
+
+.card.flip{
+   transform: rotateY(180deg);
+}
+
+.back-card {
+ height: 100%;
+    width: 100%;
+    margin: 0 auto;
+     position: absolute;
+     padding: 5px;
+  backface-visibility: hidden;
+}
+
+.card.matched  {
+  animation: dance 1s linear infinite 500ms;
+}
+
+
+.front-card {
+   height: 100%;
+    width: 100%;
+    margin: 0 auto;
+     position: absolute;
+     padding: 5px;
+  backface-visibility: hidden;  
+}
+
+.front-card {
+  transform: rotateY(180deg);
+}
+
+.overlay {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  display: none;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  color: red;
+  font-family: 'Courier New', Courier, monospace;
+  transition: background-color 1000ms, font-size 1000ms;
+  flex-direction: column;
+}
+
+.overlay-small {
+  font-size: .3em;
+  text-align: center;
+  justify-content: center;
+  color: black;
+}
+
+.overlay.visible {
+  display: flex;
+  animation: overlay-grow 3000ms forwards;
+}
+
+@keyframes overlay-grow {
+  from {
+    background-color:black;
+    font-size: 0;
+  }
+  to {
+    background-color: orange;
+    font-size: 4em;
+  }
+}
+
+ .stars {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  margin: 0 5px 0 0;
+}
+
+.stars li {
+  list-style: none;
+  display: inline-block;
+  font-size: 45px;
+}
+
+.container-score {
+   display: inline-block;
+    margin-top: 25px;
+    width: 50%;
+ text-align: center;
+  justify-content: center;
+  content: center;
+    
+}
+
+#grade_results, #grade_results {
+    font-size: 50px;
+    text-align: center;
+    justify-content: center;
+    color: white;
+}
+
+
+ .hearts {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  margin: 0 5px 0 0;
+  text-align: center;
+  justify-content: center;
+}
+
+.hearts li {
+  list-style: none;
+  display: inline-block;
+  font-size: 45px;
+  justify-content: center;
+  text-align: center;
+}
